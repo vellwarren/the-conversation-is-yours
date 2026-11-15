@@ -196,13 +196,21 @@ test/           连续性、工具和协议契约测试
 
 详见 [架构说明](docs/architecture.md)、[CC-first 迁移教程](docs/migration-from-cc-first.md)、[故障演练](docs/failover-runbook.md) 和 [安全模型](docs/security-model.md)。
 
-## 参考资料
+## 协议依据
 
-- [Claude Code LLM gateway configuration](https://docs.anthropic.com/en/docs/claude-code/llm-gateway)
+以下官方文档用于核对本仓库中的 Messages API 协议实现：
+
 - [Claude Messages streaming](https://platform.claude.com/docs/en/build-with-claude/streaming)
 - [Claude prompt caching](https://platform.claude.com/docs/en/build-with-claude/prompt-caching)
 - [Tool use with prompt caching](https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-use-with-prompt-caching)
-- [`api-to-claude-code-p`](https://github.com/tsuru0805/api-to-claude-code-p) — API → Claude Code 方向的公开教程与示例。本仓库关注长期双运行时与反向生存能力，代码为独立实现。
+
+## 致谢与项目渊源
+
+本项目最初受到 [`api-to-claude-code-p`](https://github.com/tsuru0805/api-to-claude-code-p) 的直接启发。该项目展示了从 API 接入 Claude Code `-p` 的可行路径，也为我们早期的 API → CC 实践提供了重要参考。
+
+在此基础上，本仓库进一步探索由应用持有权威会话状态、Claude Code ↔ Messages API 双向切换，以及长期会话连续性与故障生存能力。
+
+特别感谢 [`tsuru0805`](https://github.com/tsuru0805) 的公开分享。当前仓库的示例代码围绕上述双运行时目标独立实现；“独立实现”仅说明没有复制其代码，并不抹去它对本项目起点和思路的重要启发。
 
 ## 隐私声明
 
